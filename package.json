@@ -6,10 +6,10 @@
   "main": "./src/main-process/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/atom.git"
+    "url": "https://github.com/coltonsr77/atom-remastered.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/atom/issues"
+    "url": "https://github.com/coltonsr77/atom-remastered/issues"
   },
   "license": "MIT",
   "electronVersion": "11.5.0",
@@ -69,7 +69,7 @@
     "fuzzy-finder": "git+https://github.com/atom/fuzzy-finder.git#470978c",
     "git-diff": "file:packages/git-diff",
     "git-utils": "5.7.3",
-    "github": "git+https://github.com/atom/github.git#2053290",
+    "github": "git+https://github.com/coltonsr77/github.git",
     "glob": "^13.0.6",
     "go-to-line": "file:packages/go-to-line",
     "grammar-selector": "file:packages/grammar-selector",
@@ -133,7 +133,7 @@
     "one-dark-ui": "file:packages/one-dark-ui",
     "one-light-syntax": "file:packages/one-light-syntax",
     "one-light-ui": "file:packages/one-light-ui",
-    "open-on-github": "git+https://github.com/atom/open-on-github.git#c12ffbe",
+    "open-on-github": "git+https://github.com/coltonsr77/open-on-github.git",
     "package-generator": "git+https://github.com/atom/package-generator.git#5c45f80",
     "pathwatcher": "^8.1.2",
     "postcss": "8.5.28",
@@ -147,12 +147,12 @@
     "season": "^6.0.2",
     "semver": "7.3.2",
     "service-hub": "^0.7.4",
-    "settings-view": "git+https://github.com/atom/settings-view.git#94418d6",
+    "settings-view": "git+https://github.com/coltonsr77/settings-view.git",
     "sinon": "9.2.1",
     "snippets": "git+https://github.com/atom/snippets.git#e8e6b89",
     "solarized-dark-syntax": "file:packages/solarized-dark-syntax",
     "solarized-light-syntax": "file:packages/solarized-light-syntax",
-    "spell-check": "git+https://github.com/atom/spell-check.git#df4dfeb",
+    "spell-check": "git+https://github.com/coltonsr77/spell-check.git",
     "status-bar": "git+https://github.com/atom/status-bar.git#4edfaa8",
     "styleguide": "git+https://github.com/atom/styleguide.git#aa4f682",
     "superstring": "^2.4.4",
@@ -169,7 +169,7 @@
     "welcome": "file:packages/welcome",
     "whitespace": "git+https://github.com/atom/whitespace.git#53d5ba9",
     "winreg": "^1.2.5",
-    "wrap-guide": "git+https://github.com/atom/wrap-guide.git#6a4f577",
+    "wrap-guide": "git+https://github.com/coltonsr77/wrap-guide.git",
     "yargs": "18.2.0"
   },
   "packageDependencies": {
