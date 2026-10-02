@@ -266,6 +266,10 @@ module.exports = class BufferedProcess {
       throw new Error('Invalid command');
     }
 
+    if (command.includes('\0') || /[\r\n]/.test(command)) {
+      throw new Error('Invalid command');
+    }
+
     if (path.isAbsolute(command)) {
       return path.resolve(command);
     }
