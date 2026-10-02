@@ -162,7 +162,7 @@
     "text-buffer": "^13.18.5",
     "timecop": "git+https://github.com/atom/timecop.git#f7d9543",
     "tree-sitter": "git+https://github.com/DeeDeeG/node-tree-sitter.git#bb298eaae66e0c4f11908cb6209f3e141884e88e",
-    "tree-view": "git+https://github.com/atom/tree-view.git#bc42868",
+    "tree-view": "git+https://github.com/coltonsr77/tree-view.git",
     "typescript-simple": "8.0.6",
     "update-package-dependencies": "file:./packages/update-package-dependencies",
     "vscode-ripgrep": "1.13.2",
