@@ -149,7 +149,7 @@
     "service-hub": "^0.7.4",
     "settings-view": "git+https://github.com/coltonsr77/settings-view.git",
     "sinon": "9.2.1",
-    "snippets": "git+https://github.com/atom/snippets.git#e8e6b89",
+    "snippets": "git+https://github.com/cotlonsr77/snippets.git",
     "solarized-dark-syntax": "file:packages/solarized-dark-syntax",
     "solarized-light-syntax": "file:packages/solarized-light-syntax",
     "spell-check": "git+https://github.com/coltonsr77/spell-check.git",
