@@ -95,8 +95,11 @@ module.exports = class BufferedProcess {
             // quotes since they will not be interpreted correctly if they are
             return arg;
           } else {
-            // Escape double quotes by putting a backslash in front of them
-            return `"${arg.toString().replace(/"/g, '\\"')}"`;
+            // Escape backslashes and double quotes before wrapping in quotes
+            return `"${arg
+              .toString()
+              .replace(/\\/g, '\\\\')
+              .replace(/"/g, '\\"')}"`;
           }
         });
     }
