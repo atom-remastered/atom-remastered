@@ -110,10 +110,12 @@ function getNupkgFile(is64bit) {
       return;
     }
 
+    const safeNupkgFile = path.basename(nupkgFile);
+
     console.log(
-      `Received request for ${req.params.nupkg}, sending ${nupkgFile}`
+      `Received request for ${req.params.nupkg}, sending ${safeNupkgFile}`
     );
-    res.sendFile(path.join(buildPath, nupkgFile));
+    res.sendFile(safeNupkgFile, {root: buildPath});
   };
 }
 
