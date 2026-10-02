@@ -261,9 +261,26 @@ module.exports = class BufferedProcess {
     }
   }
 
+  sanitizeCommandForSpawn(command) {
+    if (typeof command !== 'string' || command.length === 0) {
+      throw new Error('Invalid command');
+    }
+
+    if (command.includes('\0') || /[\r\n]/.test(command)) {
+      throw new Error('Invalid command');
+    }
+
+    if (path.isAbsolute(command)) {
+      return path.resolve(command);
+    }
+
+    return command;
+  }
+
   spawn(command, args, options) {
     try {
-      this.process = ChildProcess.spawn(command, args, options);
+      const safeCommand = this.sanitizeCommandForSpawn(command);
+      this.process = ChildProcess.spawn(safeCommand, args, options);
     } catch (spawnError) {
       process.nextTick(() => this.handleError(spawnError));
     }
