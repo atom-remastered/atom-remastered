@@ -9,7 +9,7 @@
     "url": "https://github.com/coltonsr77/atom-remastered.git"
   },
   "bugs": {
-    "url": "https://github.com/coltonsr77/atom-remastered/issues"
+    "url": "https://github.com/coltonsr77/atom-remastered/issues/"
   },
   "license": "MIT",
   "electronVersion": "11.5.0",
@@ -167,7 +167,7 @@
     "update-package-dependencies": "file:./packages/update-package-dependencies",
     "vscode-ripgrep": "1.13.2",
     "welcome": "file:packages/welcome",
-    "whitespace": "git+https://github.com/atom/whitespace.git#53d5ba9",
+    "whitespace": "git+https://github.com/coltonsr77/whitespace.git",
     "winreg": "^1.2.5",
     "wrap-guide": "git+https://github.com/coltonsr77/wrap-guide.git",
     "yargs": "18.2.0"
