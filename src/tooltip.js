@@ -9,6 +9,15 @@ const listen = require('./delegated-listener');
 
 let followThroughTimer = null;
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const Tooltip = function(element, options, viewRegistry) {
   this.options = null;
   this.enabled = null;
@@ -413,7 +422,7 @@ Tooltip.prototype.setContent = function() {
   } else {
     const title = this.getTitle();
     if (this.options.html) {
-      inner.innerHTML = title;
+      inner.innerHTML = escapeHtml(title);
     } else {
       inner.textContent = title;
     }
