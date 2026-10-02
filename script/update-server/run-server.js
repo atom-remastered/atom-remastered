@@ -110,26 +110,12 @@ function getNupkgFile(is64bit) {
       return;
     }
 
-    const resolvedBuildPath = path.resolve(buildPath);
-    const resolvedNupkgPath = path.resolve(buildPath, nupkgFile);
-    const buildPathWithSep = resolvedBuildPath.endsWith(path.sep)
-      ? resolvedBuildPath
-      : resolvedBuildPath + path.sep;
-    if (
-      resolvedNupkgPath !== resolvedBuildPath &&
-      !resolvedNupkgPath.startsWith(buildPathWithSep)
-    ) {
-      console.log(
-        `Received out-of-root nupkg request: ${req.params.nupkg}`
-      );
-      res.sendStatus(400);
-      return;
-    }
+    const safeNupkgFile = path.basename(nupkgFile);
 
     console.log(
-      `Received request for ${req.params.nupkg}, sending ${nupkgFile}`
+      `Received request for ${req.params.nupkg}, sending ${safeNupkgFile}`
     );
-    res.sendFile(resolvedNupkgPath);
+    res.sendFile(safeNupkgFile, {root: buildPath});
   };
 }
 
