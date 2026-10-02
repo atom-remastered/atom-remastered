@@ -101,6 +101,15 @@ function getNupkgFile(is64bit) {
       }
     }
 
+    const isValidNupkg = /^atom(?:-x64)?-[A-Za-z0-9._-]+-(delta|full)\.nupkg$/.test(
+      nupkgFile
+    );
+    if (!isValidNupkg) {
+      console.log(`Received invalid nupkg request: ${req.params.nupkg}`);
+      res.sendStatus(400);
+      return;
+    }
+
     console.log(
       `Received request for ${req.params.nupkg}, sending ${nupkgFile}`
     );
