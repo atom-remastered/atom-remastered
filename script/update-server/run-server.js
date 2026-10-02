@@ -51,9 +51,8 @@ function getMacUpdates(req, res) {
     };
 
     console.log(
-      `Received request for macOS updates (version = ${
-        req.query.version
-      }), sending\n`,
+      'Received request for macOS updates (version = %s), sending\n',
+      req.query.version,
       updateInfo
     );
     res.json(updateInfo);
