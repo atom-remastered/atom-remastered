@@ -1,1 +1,1 @@
-var foo = 123 123; // Syntax error
+var foo = 123, 123; // Syntax error
