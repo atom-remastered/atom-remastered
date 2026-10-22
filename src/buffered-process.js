@@ -270,6 +270,10 @@ module.exports = class BufferedProcess {
       throw new Error('Invalid command');
     }
 
+    if (/[|&;<>()$`]/.test(command)) {
+      throw new Error('Invalid command');
+    }
+
     if (path.isAbsolute(command)) {
       return path.resolve(command);
     }
@@ -280,7 +284,8 @@ module.exports = class BufferedProcess {
   spawn(command, args, options) {
     try {
       const safeCommand = this.sanitizeCommandForSpawn(command);
-      this.process = ChildProcess.spawn(safeCommand, args, options);
+      const safeOptions = { ...options, shell: false };
+      this.process = ChildProcess.spawn(safeCommand, args, safeOptions);
     } catch (spawnError) {
       process.nextTick(() => this.handleError(spawnError));
     }
