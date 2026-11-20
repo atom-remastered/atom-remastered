@@ -148,7 +148,7 @@
     "semver": "7.8.6",
     "service-hub": "^0.7.4",
     "settings-view": "git+https://github.com/atom-remastered/settings-view.git",
-    "sinon": "9.2.1",
+    "sinon": "22.1.0",
     "snippets": "git+https://github.com/atom-remastered/snippets.git",
     "solarized-dark-syntax": "file:packages/solarized-dark-syntax",
     "solarized-light-syntax": "file:packages/solarized-light-syntax",
