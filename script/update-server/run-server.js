@@ -51,9 +51,8 @@ function getMacUpdates(req, res) {
     };
 
     console.log(
-      `Received request for macOS updates (version = ${
-        req.query.version
-      }), sending\n`,
+      'Received request for macOS updates (version = %s), sending\n',
+      req.query.version,
       updateInfo
     );
     res.json(updateInfo);
@@ -102,10 +101,21 @@ function getNupkgFile(is64bit) {
       }
     }
 
-    console.log(
-      `Received request for ${req.params.nupkg}, sending ${nupkgFile}`
+    const isValidNupkg = /^atom(?:-x64)?-[A-Za-z0-9._-]+-(delta|full)\.nupkg$/.test(
+      nupkgFile
     );
-    res.sendFile(path.join(buildPath, nupkgFile));
+    if (!isValidNupkg) {
+      console.log(`Received invalid nupkg request: ${req.params.nupkg}`);
+      res.sendStatus(400);
+      return;
+    }
+
+    const safeNupkgFile = path.basename(nupkgFile);
+
+    console.log(
+      `Received request for ${req.params.nupkg}, sending ${safeNupkgFile}`
+    );
+    res.sendFile(safeNupkgFile, {root: buildPath});
   };
 }
 
