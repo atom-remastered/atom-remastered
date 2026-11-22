@@ -95,8 +95,11 @@ module.exports = class BufferedProcess {
             // quotes since they will not be interpreted correctly if they are
             return arg;
           } else {
-            // Escape double quotes by putting a backslash in front of them
-            return `"${arg.toString().replace(/"/g, '\\"')}"`;
+            // Escape backslashes and double quotes before wrapping in quotes
+            return `"${arg
+              .toString()
+              .replace(/\\/g, '\\\\')
+              .replace(/"/g, '\\"')}"`;
           }
         });
     }
@@ -258,9 +261,31 @@ module.exports = class BufferedProcess {
     }
   }
 
+  sanitizeCommandForSpawn(command) {
+    if (typeof command !== 'string' || command.length === 0) {
+      throw new Error('Invalid command');
+    }
+
+    if (command.includes('\0') || /[\r\n]/.test(command)) {
+      throw new Error('Invalid command');
+    }
+
+    if (/[|&;<>()$`]/.test(command)) {
+      throw new Error('Invalid command');
+    }
+
+    if (path.isAbsolute(command)) {
+      return path.resolve(command);
+    }
+
+    return command;
+  }
+
   spawn(command, args, options) {
     try {
-      this.process = ChildProcess.spawn(command, args, options);
+      const safeCommand = this.sanitizeCommandForSpawn(command);
+      const safeOptions = { ...options, shell: false };
+      this.process = ChildProcess.spawn(safeCommand, args, safeOptions);
     } catch (spawnError) {
       process.nextTick(() => this.handleError(spawnError));
     }
