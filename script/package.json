@@ -26,7 +26,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "fs-admin": "^0.12.0",
     "fs-extra": "9.0.1",
-    "glob": "14.0.3",
+    "glob": "14.0.4",
     "joanna": "0.0.10",
     "klaw-sync": "^7.0.0",
     "legal-eagle": "0.14.0",
@@ -51,7 +51,7 @@
     "sync-request": "3.0.1",
     "tello": "1.2.0",
     "terser": "^4.8.1",
-    "webdriverio": "^9.31.6",
+    "webdriverio": "^10.2.0",
     "yargs": "18.0.0"
   },
   "scripts": {
