@@ -6,10 +6,10 @@
   "main": "./src/main-process/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coltonsr77/atom-remastered.git"
+    "url": "https://github.com/atom-remastered/atom-remastered.git"
   },
   "bugs": {
-    "url": "https://github.com/coltonsr77/atom-remastered/issues/"
+    "url": "https://github.com/atom-remastered/atom-remastered/issues/"
   },
   "license": "MIT",
   "electronVersion": "11.5.0",
@@ -31,7 +31,7 @@
     "autocomplete-css": "git+https://github.com/atom/autocomplete-css.git#5307928",
     "autocomplete-html": "git+https://github.com/atom/autocomplete-html.git#cee2467",
     "autocomplete-plus": "git+https://github.com/atom/autocomplete-plus.git#3bdb3f2",
-    "autocomplete-snippets": "git+https://github.com/atom/autocomplete-snippets.git#2da0e23",
+    "autocomplete-snippets": "git+https://github.com/atom-remastered/autocomplete-snippets.git#2da0e23",
     "autoflow": "file:packages/autoflow",
     "autosave": "git+https://github.com/atom-remastered/autosave.git",
     "babel-core": "6.26.3",
@@ -119,7 +119,7 @@
     "line-ending-selector": "file:packages/line-ending-selector",
     "line-top-index": "0.3.1",
     "link": "file:packages/link",
-    "markdown-preview": "git+https://github.com/atom/markdown-preview.git#c6df136",
+    "markdown-preview": "git+https://github.com/atom-remastered/markdown-preview.git#c6df136",
     "metrics": "git+https://github.com/atom/metrics.git#d35d034",
     "minimatch": "^11.0.9",
     "mocha": "12.0.3",
